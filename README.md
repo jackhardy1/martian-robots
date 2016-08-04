@@ -13,7 +13,7 @@ Then run 'bundle install' to install RSpec
 
 To run the tests, run 'rspec' in the command line
 
-I have explained one of the failing tests below in this readme. Please see: "Notes on the sample input and output given in the original document".
+I have explained one of the failing tests below in this readme. This is to do with an error with the given sample data. Please see further down at: "Notes on the sample input and output given in the original document".
 
 
 #### What would I improve on if I had more time?

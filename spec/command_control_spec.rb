@@ -86,7 +86,7 @@ describe CommandControl do
       expect(control.current_position).to eq "5 4 E"
     end
 
-    it 'can accept more than one command' do
+    it 'command control can accept more than one command' do
       control.enter_commands('FFRR')
       control.go
       expect(control.current_position).to eq "6 4 W"
