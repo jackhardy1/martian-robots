@@ -18,7 +18,7 @@ I have explained one of the failing tests below in this readme. Please see: "Not
 
 #### What would I improve on if I had more time?
 
-This took me about 4 hours. If I had more time, I would have liked to have also done:
+This took me a bit more than 3 hours - perhaps 4 or so. If I had more time, I would have liked to have also done:
 
 Another class for commands, so that I can extend this with more commands at a later date.
 
