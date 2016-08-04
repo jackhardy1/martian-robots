@@ -28,6 +28,15 @@ class CommandControl
     @robot.set_direction direction
   end
 
+  def move_robot_forward
+    case robot_direction
+    when 'N' then move_north
+    when 'E' then move_east
+    when 'S' then move_south
+    when 'W' then move_west
+    end
+  end
+
   def turn_robot_left
     @robot.turn_left
   end
@@ -36,20 +45,41 @@ class CommandControl
     @robot.turn_right
   end
 
+  def move_north
+    (@y_position + 1) > @y_limit ? robot_lost? : @y_position += 1
+  end
+
+  def move_east
+    (@x_position + 1) > @x_limit ? robot_lost? : @x_position += 1
+  end
+
+  def move_south
+    (@y_position - 1) < 0 ? robot_lost? : @y_position -= 1
+  end
+
+  def move_west
+    (@x_position - 1) < 0 ? robot_lost? : @x_position -= 1
+  end
+
   def current_position
-    if @lost
-      "#{@x_position} #{@y_position} #{@directions[0]} LOST"
+    if robot_lost?
+      "#{@x_position} #{@y_position} #{robot_direction} LOST"
     else
-    "#{@x_position} #{@y_position} #{current_direction}"
+    "#{@x_position} #{@y_position} #{robot_direction}"
     end
   end
 
-  def current_direction
-    "#{@robot.current_direction}"
-  end
 
   def show_grid_boundary
     "#{@x_limit} #{@y_limit}"
+  end
+
+  def robot_direction
+    "#{@robot.current_direction}"
+  end
+
+  def robot_lost?
+    @robot.lost?
   end
 
   def out_of_range? x,y

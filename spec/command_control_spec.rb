@@ -54,5 +54,10 @@ describe CommandControl do
       control.turn_robot_right
       expect(robot.current_direction).to eq 'S'
     end
+
+    it 'moves forward' do
+      control.move_robot_forward
+      expect(control.current_position).to eq "5 4 E"
+    end
   end
 end
