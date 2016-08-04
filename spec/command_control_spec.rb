@@ -47,12 +47,12 @@ describe CommandControl do
 
     it 'turning left' do
       control.turn_robot_left
-      expect(robot.current_direction).to eq 'N'
+      expect(control.robot_direction).to eq 'N'
     end
 
     it 'turning right' do
       control.turn_robot_right
-      expect(robot.current_direction).to eq 'S'
+      expect(control.robot_direction).to eq 'S'
     end
 
     it 'moves forward in set direction' do

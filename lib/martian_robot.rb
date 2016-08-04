@@ -1,7 +1,7 @@
 require_relative 'command_control'
 
 class MartianRobot
-  attr_accessor :directions, :lost
+  attr_accessor :lost
 
   def initialize
     @directions = ['N','E','S','W']

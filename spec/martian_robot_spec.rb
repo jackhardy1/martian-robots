@@ -4,7 +4,7 @@ require './lib/martian_robot'
 describe MartianRobot do
 
   context 'default settings' do
-    it 'robot is not lost' do
+    it 'robot is not lost by default' do
       expect(subject.lost?).to eq false
     end
   end
@@ -15,7 +15,7 @@ describe MartianRobot do
       subject.turn_left
       expect(subject.current_direction).to eq 'W'
     end
-    
+
     it 'turns right' do
       subject.set_direction "N"
       subject.turn_right

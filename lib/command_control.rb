@@ -14,7 +14,7 @@ class CommandControl
   end
 
   def enter_grid_size x,y
-    raise "Coordinates must be no bigger than 50" if x > COORDINATE_LIMIT || y > COORDINATE_LIMIT
+    raise "Coordinates must be no bigger than 50" if over_coordinate_limit? x,y
     @x_limit = x
     @y_limit = y
   end
@@ -78,21 +78,23 @@ class CommandControl
     (@x_position - 1) < 0 ? @robot.lost = true : @x_position -= 1
   end
 
+  def show_grid_boundary
+    "#{@x_limit} #{@y_limit}"
+  end
+  
   def current_position
     if robot_lost?
       "#{@x_position} #{@y_position} #{robot_direction} LOST"
     else
-    "#{@x_position} #{@y_position} #{robot_direction}"
+      "#{@x_position} #{@y_position} #{robot_direction}"
     end
-  end
-
-  def show_grid_boundary
-    "#{@x_limit} #{@y_limit}"
   end
 
   def robot_direction
     "#{@robot.current_direction}"
   end
+
+  private
 
   def robot_lost?
     @robot.lost?
@@ -100,5 +102,9 @@ class CommandControl
 
   def out_of_range? x,y
     x > @x_limit || y > @y_limit
+  end
+
+  def over_coordinate_limit? x,y
+    x > COORDINATE_LIMIT || y > COORDINATE_LIMIT
   end
 end
