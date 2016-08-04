@@ -6,7 +6,7 @@
 To clone this repository into your desired folder, run:
 
 ```
-git clone git@github.com:jackhardy1/martian-robots-test.git
+git clone git@github.com:jackhardy1/martian-robots.git
 ```
 
 Then run 'bundle install' to install RSpec
