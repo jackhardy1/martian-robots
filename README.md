@@ -37,6 +37,7 @@ More refactoring with my other code.
 A front-end interactive display viewable on a phone / website.
 
 
+
 #### How to play the game from IRB / PRY:
 
 #### Methods for use:
@@ -112,6 +113,8 @@ new_game.current_position
 ```
 => "1 1 E"
 
+
+
 #### Notes on the sample input and output given in the original document:
 
 From the original text provided, I have noticed an error with the third sample input / output. This is where the input is (0 3 W LLFFFLFLFL), and the output is (2 3 S).
@@ -139,6 +142,9 @@ F = 3 3 N LOST
 I have left the failing RSpec test (input/output 3) to show this.
 
 In order to achieve the final result of 2 3 S, you would need to set the starting coordinates to 0 2 W instead.
+
+
+
 
 
 
