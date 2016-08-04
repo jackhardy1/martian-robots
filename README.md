@@ -18,19 +18,21 @@ I have explained one of the failing tests below in this readme. Please see: "Not
 
 #### What would I improve on if I had more time?
 
-This took me a bit more than 3 hours - perhaps 4 or so. If I had more time, I would have liked to have also done:
+This did take me more than 3 hours as I really wanted to get the logic to work well, but I didn't have time to work on the user interface, which would need more work. If I had more time, I would have liked to have also done:
 
 Another class for commands, so that I can extend this with more commands at a later date.
 
 Another class for a grid / planet, with set boundaries.
 
-A proper command line interface to be able to interact with user inputs (gets.chomp)
+A proper command line interface to be able to interact with user inputs (gets.chomp) from the terminal
 
 Included tests for edge cases
 
-More refactoring with my tests to include double to mock the behaviour of the robot.
+More refactoring with my tests to include doubles to mock the behaviour of the robot.
 
 More refactoring with my other code.
+
+A front-end interactive display viewable on a phone / website.
 
 
 #### How to play the game from IRB / PRY:
