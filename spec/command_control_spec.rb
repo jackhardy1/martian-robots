@@ -55,9 +55,41 @@ describe CommandControl do
       expect(robot.current_direction).to eq 'S'
     end
 
-    it 'moves forward' do
+    it 'moves forward in set direction' do
       control.move_robot_forward
       expect(control.current_position).to eq "5 4 E"
+    end
+  end
+
+  context 'commands: ' do
+    before(:each) do
+      control.enter_grid_size 10,10
+      control.enter_starting_coordinates 4,4
+      control.enter_starting_direction "e"
+    end
+
+    it 'L will move the robot left' do
+      control.enter_commands('L')
+      control.go
+      expect(control.current_position).to eq "4 4 N"
+    end
+
+    it 'R will move the robot right' do
+      control.enter_commands('R')
+      control.go
+      expect(control.current_position).to eq "4 4 S"
+    end
+
+    it 'F will move the robot forward' do
+      control.enter_commands('F')
+      control.go
+      expect(control.current_position).to eq "5 4 E"
+    end
+
+    it 'can accept more than one command' do
+      control.enter_commands('FFRR')
+      control.go
+      expect(control.current_position).to eq "6 4 W"
     end
   end
 end

@@ -10,6 +10,7 @@ class CommandControl
     @y_limit = 0
     @x_position = 0
     @y_position = 0
+    @commands = []
   end
 
   def enter_grid_size x,y
@@ -26,6 +27,22 @@ class CommandControl
 
   def enter_starting_direction direction
     @robot.set_direction direction
+  end
+
+  def enter_commands commands
+    @commands = commands.chars.map(&:upcase)
+  end
+
+  def go
+    unless robot_lost? || @commands.empty?
+      selected_command = @commands.slice!(0)
+        case selected_command
+        when "L" then turn_robot_left
+        when "R" then turn_robot_right
+        when "F" then move_robot_forward
+      end
+      go
+    end
   end
 
   def move_robot_forward
@@ -46,19 +63,19 @@ class CommandControl
   end
 
   def move_north
-    (@y_position + 1) > @y_limit ? robot_lost? : @y_position += 1
+    (@y_position + 1) > @y_limit ? @robot.lost = true : @y_position += 1
   end
 
   def move_east
-    (@x_position + 1) > @x_limit ? robot_lost? : @x_position += 1
+    (@x_position + 1) > @x_limit ? @robot.lost = true : @x_position += 1
   end
 
   def move_south
-    (@y_position - 1) < 0 ? robot_lost? : @y_position -= 1
+    (@y_position - 1) < 0 ? @robot.lost = true : @y_position -= 1
   end
 
   def move_west
-    (@x_position - 1) < 0 ? robot_lost? : @x_position -= 1
+    (@x_position - 1) < 0 ? @robot.lost = true : @x_position -= 1
   end
 
   def current_position
