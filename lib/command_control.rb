@@ -86,7 +86,6 @@ class CommandControl
     end
   end
 
-
   def show_grid_boundary
     "#{@x_limit} #{@y_limit}"
   end

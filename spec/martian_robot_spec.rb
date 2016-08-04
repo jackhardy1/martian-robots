@@ -10,8 +10,16 @@ describe MartianRobot do
   end
 
   context 'movements' do
-    it 'changes direction' do
-      # subject.
+    it 'turns left' do
+      subject.set_direction "N"
+      subject.turn_left
+      expect(subject.current_direction).to eq 'W'
+    end
+    
+    it 'turns right' do
+      subject.set_direction "N"
+      subject.turn_right
+      expect(subject.current_direction).to eq "E"
     end
   end
 
