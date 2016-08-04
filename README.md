@@ -18,7 +18,9 @@ I have explained one of the failing tests below in this readme. Please see: "Not
 
 #### What would I improve on if I had more time?
 
-This did take me more than 3 hours as I really wanted to get the logic to work well, but I didn't have time to work on the user interface, which would need more work. If I had more time, I would have liked to have also done:
+This did take me more than 3 hours as I really wanted to get the logic to work well. As a consequence, I didn't have time to work on the user interface, which I would have wanted to implement. But it works and was a lot of fun doing it!
+
+If I had more time, I would have liked to have also done:
 
 Another class for commands, so that I can extend this with more commands at a later date.
 
